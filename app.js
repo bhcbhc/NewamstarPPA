@@ -25,7 +25,6 @@ require(['moduleLoad', 'main-menu', 'reportLoad'], function (ml, mainMenu, repor
 
     mainMenu.test();
     reportLoad.loadModules();
-repot
     $(document).ready(function () {
         $('#startTimeSelect').kendoDateTimePicker({
             value: new Date("Mar 24,2017")

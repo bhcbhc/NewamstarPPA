@@ -1,2 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 /src/libs/
+.idea/NewamstarPPA.iml
+.idea/markdown-navigator/
+.idea/modules.xml
+.idea/workspace.xml

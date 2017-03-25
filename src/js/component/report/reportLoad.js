@@ -3,8 +3,12 @@
  */
 
 define(['cleanRecord', 'consumption', 'deviceEffect', 'produce', 'deviceRemind', 'source', 'unGermAction', 'moduleLoad'],
+    /**
+     *
+     * @return {{loadModules: loadReportModule}}
+     */
     function () {
-        for (var len = arguments.length, modules = new Array(len), key = 0; key < len; key++) {
+        for (var len = arguments.length, modules = Array(len), key = 0; key < len; key++) {
             modules[key] = arguments[key];
         }
 
