@@ -1,0 +1,27 @@
+{
+  "name": "newamstar-ppa",
+  "version": "1.0.0",
+  "description": "a spa for newamstar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhcbhc/NewamstarPPA.git"
+  },
+  "keywords": [
+    "PPA",
+    "OEE",
+    "kendo",
+    "jquery",
+    "jaydata",
+    "MVVM"
+  ],
+  "author": "bhcbhc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhcbhc/NewamstarPPA/issues"
+  },
+  "homepage": "https://github.com/bhcbhc/NewamstarPPA#readme"
+}

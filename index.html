@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='x-ua-compatible' content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit | ie-comp | ie-stand"/>
+
+    <title>Newamstar-PPA</title>
+
+    <link rel="stylesheet" type="text/css" href="./src/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/libs/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/libs/kendo/styles/kendo.common.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/libs/kendo/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/libs/kendo/styles/kendo.default.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/libs/kendo/styles/kendo.default.mobile.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/styles/common/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/styles/common/app.css">
+    <link rel="stylesheet" type="text/css" href="./src/styles/common/common.css">
+
+</head>
+<body>
+<div id="app" class="full-height full-width pt60">
+    <nav class="full-width mt-60 height-60">
+        <div class="full-width aic-page-title">
+            <img src="./src/images/logo1.png" alt="Newamstar">
+            <span></span>
+            <span class="fr">欢迎</span>
+        </div>
+        <div class="full-width aic-page-menu">
+            <div class="alarm"></div>
+            <a class="fr">退出</a>
+        </div>
+    </nav>
+    <div id="page-content" class="full-width full-height">
+        <div id="navigation" class="full-height fl ml-6 w-per-16">
+            <div id="aic-menu" class="ml6 transition-all-05">
+                <div class="panel-group" id="panel-aic-menu">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-aic-menu"
+                               href="#panel-element-oee">绩效管理</a>
+                        </div>
+                        <ul id="panel-element-oee" class="panel-collapse collapse">
+                            <li>设备综合效率</li>
+                            <li>NLU</li>
+                            <li>停机分析</li>
+                            <li>产量分析</li>
+                            <li>物料消耗</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-aic-menu"
+                               href="#panel-report">报表</a>
+                        </div>
+                        <ul id="panel-report" class="panel-collapse collapse">
+                            <li id="re-pro" class="a-selected">生产报表</li>
+                            <li id="re-waste">物料消耗报表</li>
+                            <li id="re-source">能源报表</li>
+                            <li id="re-device">设备绩效报表</li>
+                            <li id="re-clean">清晰记录报表</li>
+                            <li id="re-nGa">无菌启动报表</li>
+                            <li id="re-remind">设备提醒报表</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default"></div>
+                </div>
+            </div>
+        </div>
+        <div id="hover-nav" class="full-height fl">
+            <table class="full-height">
+                <tbody>
+                <tr>
+                    <td>
+                        <img src="src/images/8_8/arrow_left.png" alt="" width="8" height="8">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="content" class="full-height fl ml-6 w-per-84">
+            <div class="full-height full-width pt50">
+                <div class="select-time mt-50" style="height: 50px">
+                    <label for="startTimeSelect">开始时间</label>
+                    <input id="startTimeSelect"/>
+                    <label for="endTimeSelect">截止时间</label>
+                    <input id="endTimeSelect"/>
+                    <button id="chart-action" class="btn btn-info">应用</button>
+                    <div class="btn-group fr">
+                        <button id="chart-reset" class="btn btn-info">重置</button>
+                        <button id="chart-save" class="btn btn-info">保存</button>
+                        <button id="chart-print" class="btn btn-info">打印</button>
+                    </div>
+                </div>
+                <div id="equip-viewport" class="full-height"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cf"></div>
+</div>
+
+<script src="src/libs/jquery/jquery-3.2.0.min.js"></script>
+<script src="src/libs/jquery/jQuery.print.js"></script>
+<script src="src/libs/kendo/js/jszip.min.js"></script>
+<script src="src/libs/kendo/js/kendo.all.min.js"></script>
+<script src="src/libs/bootstrap/js/bootstrap.min.js"></script>
+
+
+<script data-main="app.js" src="r.js"></script>
+
+</body>
+</html>

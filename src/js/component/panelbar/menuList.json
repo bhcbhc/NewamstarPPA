@@ -1,0 +1,14 @@
+{
+  "ppa":{
+    "name":"绩效管理",
+     "child":{
+
+     }
+  },
+  "statement":{
+    "name":"报表",
+    "child":{
+
+    }
+  }
+}

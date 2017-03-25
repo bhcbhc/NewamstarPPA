@@ -1,0 +1,54 @@
+.aic-page-title {
+  height: 30px;
+  background: #669999;
+  color: white;
+  line-height: 30px;
+  font-size: 0;
+}
+
+.aic-page-menu {
+  height: 30px;
+  background: -webkit-linear-gradient(#FFFFFF, #b9b9b9 40%, #DFE4F4);
+  background: -o-linear-gradient(#FFFFFF, #b9b9b9 40%, #DFE4F4);
+  background: -moz-linear-gradient(#FFFFFF, #b9b9b9 40%, #DFE4F4);
+  background: linear-gradient(#FFFFFF, #b9b9b9 40%, #DFE4F4);
+  line-height: 30px;
+}
+
+#hover-nav {
+  width: 10px;
+  background: -webkit-linear-gradient(left, #DFE4F4, #b9b9b9 40%, #DFE4F4);
+  background: -o-linear-gradient(right, #DFE4F4, #b9b9b9 40%, #DFE4F4);
+  background: -moz-linear-gradient(right, #DFE4F4, #b9b9b9 40%, #DFE4F4);
+  background: linear-gradient(to right, #DFE4F4, #b9b9b9 40%, #DFE4F4);
+  cursor: pointer;
+  color: #929292;
+  position: relative;
+  z-index: 10;
+}
+
+.panel-collapse li {
+  font-weight: normal;
+  cursor: pointer;
+  height: 25px;
+  padding-left: 6px;
+  width: 100%;
+  &:hover {
+    background: #00c9ff;
+  }
+}
+
+#equip-viewport {
+  border-top: 1px solid #ebecee;
+}
+
+.select-time {
+  label {
+    height: 30px;
+    vertical-align: middle;
+    font-size: 14px;
+    display: inline;
+    margin: 5px 5px 0 10px
+  }
+  padding: 5px 2px ;
+}
