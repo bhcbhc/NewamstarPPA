@@ -17,20 +17,35 @@ require.config(
             'unGermAction': 'src/js/component/report/unGermAction',
 
             //报表加载
-            'reportLoad': 'src/js/component/report/reportLoad'
+            'reportLoad': 'src/js/component/report/reportLoad',
+
+            //格式化日期
+            'formatDate': 'src/js/component/formatDate/format'
         }
     });
-require(['moduleLoad', 'main-menu', 'reportLoad'], function (ml, mainMenu, reportLoad) {
+require(['moduleLoad', 'reportLoad', 'formatDate'], function (ml, reportLoad, formatDate) {
     'use strict';
 
-    mainMenu.test();
     reportLoad.loadModules();
     $(document).ready(function () {
         $('#startTimeSelect').kendoDateTimePicker({
-            value: new Date("Mar 24,2017")
+            value: new Date("Mar 24,2017"),
+            change: function () {
+                var startTime = kendo.toString(this.value(), 'g'),
+                    endTime = $('#endTimeSelect').val(),
+                    text = startTime + ' —— ' + endTime;
+
+                $('.date-value').html(text);
+            }
         });
         $('#endTimeSelect').kendoDateTimePicker({
-            value: new Date()
+            value: new Date(),
+            change: function () {
+                var endTime = kendo.toString(this.value(), 'g'),
+                    startTime = $('#startTimeSelect').val(),
+                    text = startTime + ' —— ' + endTime;
+                $('.date-value').html(text);
+            }
         })
     });
 
@@ -46,5 +61,31 @@ require(['moduleLoad', 'main-menu', 'reportLoad'], function (ml, mainMenu, repor
         }
     });
 
-    $('#panel-report ul li:first').trigger('click');
+
+    $('#chart-print').on('click', function () {
+        if ($('.chart-print')) {
+            $('.chart-print').print();
+        }
+    });
+
+    $('.export-pdf').click(function () {
+        kendo.drawing.drawDOM($('.chart-print'))
+            .then(function (group) {
+                return kendo.drawing.exportPDF(group, {
+                    paperSize: 'auto',
+                    margin: {left: '1cm', top: '1cm', right: '1cm', bottom: '1cm'}
+                });
+            })
+            .done(function (data) {
+                kendo.saveAs({
+                    dataURI: data,
+                    fileName: 'admin' + formatDate.formDate(false) + '.pdf',
+                    proxyURL: '//demos.telerik.com/kendo-ui/service/export'
+                });
+            });
+    });
+
+    $('.export-excel').click(function () {
+
+    });
 });

@@ -22,11 +22,13 @@ define(function () {
     module.init = function () {
         var div = $('<div  class="clam_sys">清洗记录报表</div>');
 
-
-        eventBind();
-
         return div;
 
+    };
+
+
+    module.addEvents = function () {
+        eventBind();
     };
 
     module.destroy = function () {

@@ -14,7 +14,7 @@ define(function () {
     return {
         /**
          * import a new module
-         * @param module {{moduleName:string,moduleId:string,init:function,destroy:function}}
+         * @param module {{moduleName:string,moduleId:string,init:function,destroy:function,addEvents:function}}
          * @return {{result:boolean,message:string}}
          */
         importNewModule: function (module) {
@@ -22,7 +22,7 @@ define(function () {
                 isExist = false;
             if (typeof module !== 'undefined' && typeof module.moduleName != "undefined"
                 && typeof module.init === 'function' && typeof module.moduleId !== 'undefined'
-                && typeof module.destroy === 'function') {
+                && typeof module.destroy === 'function' && typeof  module.addEvents === 'function') {
                 for (var i = 0; i < allModule.length; i++) {
                     if (allModule[i].moduleName === module.moduleName) {
                         isExist = true;
@@ -74,6 +74,7 @@ define(function () {
             moduleDiv = module.init();
             moduleDiv.appendTo(container);
 
+            setTimeout(module.addEvents, 0);
 
         }
 

@@ -90,7 +90,19 @@
                     <button id="chart-action" class="btn btn-info">应用</button>
                     <div class="btn-group fr">
                         <button id="chart-reset" class="btn btn-info">重置</button>
-                        <button id="chart-save" class="btn btn-info">保存</button>
+                        <div class="dropdown fl">
+                            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">导出
+                                <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu pull-right" role="menu">
+                                <button role="presentation" class='button btn-success export-pdf full-width'>
+                                    导出到pdf
+                                </button>
+                                <button role="presentation" class=" button btn-success export-excel full-width">
+                                    导出到excle
+                                </button>
+                            </div>
+                        </div>
                         <button id="chart-print" class="btn btn-info">打印</button>
                     </div>
                 </div>

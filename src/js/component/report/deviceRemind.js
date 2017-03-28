@@ -23,10 +23,12 @@ define(function () {
         var div = $('<div>设备启动报表</div>');
 
 
-        eventBind();
-
         return div;
 
+    };
+
+    module.addEvents = function () {
+        eventBind();
     };
 
     module.destroy = function () {

@@ -24,10 +24,12 @@ define(function () {
         var div = $('<div  class="clam_sys">设备绩效报表</div>');
 
 
-        eventBind();
-
         return div;
 
+    };
+
+    module.addEvents = function () {
+        eventBind();
     };
 
     module.destroy = function () {

@@ -6,39 +6,51 @@
 
     <link rel="stylesheet" type="text/css" href="./src/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./src/libs/bootstrap/css/bootstrap-theme.min.css">
-
 </head>
 <body>
-<div class="container">
-    <div class="panel-group" id="panel-214140">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-214140"
-                   href="#panel-element-974733">生产绩效</a>
-            </div>
-            <div id="panel-element-974733" class="panel-collapse collapse">
-                <div class="panel-body">
-                    工厂绩效
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-214140"
-                   href="#panel-element-102841">报表</a>
-            </div>
-            <ul id="panel-element-102841" class="panel-collapse collapse">
-                <li>生产报表</li>
-                <li>质量报表</li>
-                <li>物料消耗报表</li>
-                <li>能源报表</li>
-                <li>设备绩效报表</li>
-            </ul>
-        </div>
-        <div class="panel panel-default"></div>
+<div id="example">
+    <div id="grid">
+        <input data-bind="value:serverAddress"/>
+        <input data-bind="value:userName"/>
+        <input data-bind="value:password"/>
+        <button data-bind="click:login">初始化</button>
     </div>
+    <script src="src/libs/jquery/jquery-3.2.0.min.js"></script>
+    <script src="src/libs/kendo/js/jszip.min.js"></script>
+    <script src="src/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="src/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        var viewModel = kendo.observale({
+            serverAddress: "http://114.115.213.224:8002/",
+            userName: "lky",
+            password: "lky",
+            startTime: new Date(2016, 3, 17),
+            endTime: new Date(2016, 3, 18),
+            login: function () {
+                var serverAddress = this.get('serverAddress');
+                var userName = this.get('userName');
+                var pwd = this.get('password');
+                if (serverAddress === "" || userName === "" || pwd === "") {
+                    return;
+                }
+                kendo.ui.progress($('#login-modal'), true);
+
+                Service.AuthenticationService.login(serverAddress, userName, pwd)
+                    .then(function (value
+                :
+                boolean
+                )
+                {
+                    StartUp.Instance.loginResultProcess(value);
+                }
+                ).
+                fail((e) = > {
+                    console.log(e);
+            })
+                ;
+            },
+        })
+    </script>
 </div>
-<script src="src/libs/jquery/jquery-3.2.0.min.js"></script>
-<script src="src/libs/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
